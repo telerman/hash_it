@@ -15,17 +15,6 @@
 #include <cstring>
 using namespace std;
 
-void str2bin(const std::string& in, unsigned char out[])
-{
-    const char* data = in.data();
-    const std::string::size_type size = in.size();
-    for(std::string::size_type i = 0; i < size; i+= 2) {
-        unsigned int tmp;
-        std::sscanf(data+i, "%02X", &tmp);
-        out[i/2] = tmp;
-    }
-}
-
 string sha1sum(string in_text="test", int _cut=20) {
 
 	unsigned char * cData = new unsigned char[in_text.length()];
