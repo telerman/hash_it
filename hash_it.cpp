@@ -1,11 +1,12 @@
 //============================================================================
-// Name        : crypto_pp.cpp
+// Name        : hash_it.cpp
 // Version     :
 // Copyright   :
 // Description :
 //============================================================================
 #include "openssl/sha.h"
 #include <stdio.h>
+#include <stdlib.h> 
 #include <string>
 #include <iostream>
 #include <sstream>
