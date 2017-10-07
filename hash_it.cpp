@@ -30,10 +30,13 @@ string sha1sum(string in_text="test", int _cut=40) {
 	SHA1(cData, length, hash);
 
 	stringstream et1;
+	stringstream et2;
 
 	for(int i = 0; i < _cut/2; i++)  {
 	  et1 << setfill('0') << setw(2) << hex << (unsigned int)hash[i];
+	  et2 << hex << (unsigned int)hash[i];
 	}
+	cout << endl << et2.str() << endl;
 	return et1.str();
 }
 
