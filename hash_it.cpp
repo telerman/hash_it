@@ -9,6 +9,7 @@
 #include <stdlib.h> 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <iterator>
 #include <unistd.h>
@@ -16,7 +17,7 @@
 #include <cstring>
 using namespace std;
 
-string sha1sum(string in_text="test", int _cut=20) {
+string sha1sum(string in_text="test", int _cut=40) {
 
 	unsigned char * cData = new unsigned char[in_text.length()];
 
@@ -30,9 +31,9 @@ string sha1sum(string in_text="test", int _cut=20) {
 
 	stringstream et1;
 
-	for(int i = 0; i < _cut/2; i++)
-		et1 << hex << (unsigned int)hash[i];
-
+	for(int i = 0; i < _cut/2; i++)  {
+	  et1 << setfill('0') << setw(2) << hex << (unsigned int)hash[i];
+	}
 	return et1.str();
 }
 
